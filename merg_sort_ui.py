@@ -84,3 +84,22 @@ def run_sort():
         output_text.delete(1.0, tk.END)
         output_text.insert(tk.END, f"🌀 Sorted Array (Normal Merge Sort):\n{arr1}\n\n")
         output_text.insert(tk.END, f"⚙️ Sorted Array (Multithreaded Merge Sort):\n{arr2}\n\n")
+
+ output_text.insert(tk.END, f"⏱ Normal Merge Sort Time        : {normal_time:.6f} sec\n")
+        output_text.insert(tk.END, f"🚀 Multithreaded Merge Sort Time : {threaded_time:.6f} sec\n")
+
+        if threaded_time < normal_time:
+            improvement = ((normal_time - threaded_time) / normal_time) * 100
+            output_text.insert(tk.END, f"\n✅ Multithreaded Merge Sort is faster by {improvement:.2f}%!\n")
+        elif threaded_time > normal_time:
+            slowdown = ((threaded_time - normal_time) / threaded_time) * 100
+            output_text.insert(tk.END, f"\n⚠️ Normal Merge Sort performed better (Thread overhead {slowdown:.2f}%).\n")
+
+else:
+            output_text.insert(tk.END, "\n⚖️ Both algorithms performed equally well.\n")
+
+        output_text.config(state=tk.DISABLED)
+
+    except ValueError:
+        messagebox.showerror("Error", "Please enter valid integer inputs.")
+
