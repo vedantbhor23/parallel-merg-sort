@@ -103,3 +103,8 @@ else:
     except ValueError:
         messagebox.showerror("Error", "Please enter valid integer inputs.")
 
+
+# ------------------- STYLING FUNCTION -------------------
+def style_widget(widget, bg, fg, font=("Arial", 12), padx=6, pady=6):
+    widget.config(bg=bg, fg=fg, font=font, padx=padx, pady=pady)
+
