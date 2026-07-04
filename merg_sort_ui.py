@@ -137,3 +137,12 @@ btn_run = tk.Button(root, text="🚀 Run Comparison", command=run_sort,
                     bg="#5bc0be", fg="black", activebackground="#0b132b",
                     font=("Arial", 14, "bold"), relief="raised", bd=4, width=20)
 btn_run.pack(pady=15)
+
+# Output box
+output_frame = tk.Frame(root, bg="#1c2541", bd=3, relief="ridge")
+output_frame.pack(padx=20, pady=10, fill="both", expand=True)
+
+tk.Label(output_frame, text="📊 Output & Results:", bg="#1c2541", fg="#fff", font=("Arial", 13, "bold")).pack(pady=5)
+output_text = scrolledtext.ScrolledText(output_frame, width=90, height=20, wrap=tk.WORD, font=("Consolas", 11), bg="#f0f0f0", fg="#000", bd=2)
+output_text.pack(padx=10, pady=10)
+output_text.config(state=tk.DISABLED)
