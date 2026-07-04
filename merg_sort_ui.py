@@ -68,3 +68,8 @@ def run_sort():
 
         arr1 = arr.copy()
         arr2 = arr.copy()
+
+# --- Normal Merge Sort ---
+        start_time = time.time()
+        merge_sort(arr1, 0, len(arr1) - 1)
+        normal_time = time.time() - start_time
