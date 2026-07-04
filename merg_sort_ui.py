@@ -108,3 +108,8 @@ else:
 def style_widget(widget, bg, fg, font=("Arial", 12), padx=6, pady=6):
     widget.config(bg=bg, fg=fg, font=font, padx=padx, pady=pady)
 
+# ------------------- TKINTER UI SETUP -------------------
+root = tk.Tk()
+root.title("Merge Sort vs Multithreaded Merge Sort")
+root.geometry("800x650")
+root.config(bg="#0b132b")
