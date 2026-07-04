@@ -39,3 +39,16 @@ def merge_sort(arr, left, right):
         merge_sort(arr, left, mid)
         merge_sort(arr, mid + 1, right)
         merge(arr, left, mid, right)
+
+# ------------------- MULTITHREADED MERGE SORT -------------------
+def threaded_merge_sort(arr, left, right):
+    if left < right:
+        mid = (left + right) // 2
+        left_thread = threading.Thread(target=threaded_merge_sort, args=(arr, left, mid))
+        right_thread = threading.Thread(target=threaded_merge_sort, args=(arr, mid + 1, right))
+        left_thread.start()
+        right_thread.start()
+        left_thread.join()
+        right_thread.join()
+        merge(arr, left, mid, right)
+
