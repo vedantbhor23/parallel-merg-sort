@@ -131,3 +131,9 @@ entry_n.grid(row=0, column=1, padx=10, pady=8)
 tk.Label(frame_input, text="Enter elements (or 'r' for random):", bg="#3a506b", fg="white", font=("Arial", 12, "bold")).grid(row=1, column=0, padx=10, pady=8, sticky="e")
 entry_arr = tk.Entry(frame_input, width=50, font=("Arial", 12))
 entry_arr.grid(row=1, column=1, padx=10, pady=8)
+
+# Run Button
+btn_run = tk.Button(root, text="🚀 Run Comparison", command=run_sort,
+                    bg="#5bc0be", fg="black", activebackground="#0b132b",
+                    font=("Arial", 14, "bold"), relief="raised", bd=4, width=20)
+btn_run.pack(pady=15)
