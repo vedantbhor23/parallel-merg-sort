@@ -128,3 +128,6 @@ tk.Label(frame_input, text="Enter number of elements:", bg="#3a506b", fg="white"
 entry_n = tk.Entry(frame_input, width=10, font=("Arial", 12))
 entry_n.grid(row=0, column=1, padx=10, pady=8)
 
+tk.Label(frame_input, text="Enter elements (or 'r' for random):", bg="#3a506b", fg="white", font=("Arial", 12, "bold")).grid(row=1, column=0, padx=10, pady=8, sticky="e")
+entry_arr = tk.Entry(frame_input, width=50, font=("Arial", 12))
+entry_arr.grid(row=1, column=1, padx=10, pady=8)
