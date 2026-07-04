@@ -4,8 +4,6 @@ import random
 import tkinter as tk
 from tkinter import messagebox, scrolledtext
 
-
-
 # ------------------- MERGE FUNCTION -------------------
 def merge(arr, left, mid, right):
     L = arr[left:mid + 1]
@@ -32,6 +30,7 @@ def merge(arr, left, mid, right):
         j += 1
         k += 1
 
+
 # ------------------- NORMAL MERGE SORT -------------------
 def merge_sort(arr, left, right):
     if left < right:
@@ -39,6 +38,7 @@ def merge_sort(arr, left, right):
         merge_sort(arr, left, mid)
         merge_sort(arr, mid + 1, right)
         merge(arr, left, mid, right)
+
 
 # ------------------- MULTITHREADED MERGE SORT -------------------
 def threaded_merge_sort(arr, left, right):
@@ -51,6 +51,7 @@ def threaded_merge_sort(arr, left, right):
         left_thread.join()
         right_thread.join()
         merge(arr, left, mid, right)
+
 
 # ------------------- MAIN FUNCTION (GUI HANDLER) -------------------
 def run_sort():
@@ -69,23 +70,22 @@ def run_sort():
         arr1 = arr.copy()
         arr2 = arr.copy()
 
-# --- Normal Merge Sort ---
+        # --- Normal Merge Sort ---
         start_time = time.time()
         merge_sort(arr1, 0, len(arr1) - 1)
         normal_time = time.time() - start_time
 
-# --- Multithreaded Merge Sort ---
+        # --- Multithreaded Merge Sort ---
         start_time = time.time()
         threaded_merge_sort(arr2, 0, len(arr2) - 1)
         threaded_time = time.time() - start_time
 
-  # --- Display Results ---
+        # --- Display Results ---
         output_text.config(state=tk.NORMAL)
         output_text.delete(1.0, tk.END)
         output_text.insert(tk.END, f"🌀 Sorted Array (Normal Merge Sort):\n{arr1}\n\n")
         output_text.insert(tk.END, f"⚙️ Sorted Array (Multithreaded Merge Sort):\n{arr2}\n\n")
-
- output_text.insert(tk.END, f"⏱ Normal Merge Sort Time        : {normal_time:.6f} sec\n")
+        output_text.insert(tk.END, f"⏱ Normal Merge Sort Time        : {normal_time:.6f} sec\n")
         output_text.insert(tk.END, f"🚀 Multithreaded Merge Sort Time : {threaded_time:.6f} sec\n")
 
         if threaded_time < normal_time:
@@ -94,8 +94,7 @@ def run_sort():
         elif threaded_time > normal_time:
             slowdown = ((threaded_time - normal_time) / threaded_time) * 100
             output_text.insert(tk.END, f"\n⚠️ Normal Merge Sort performed better (Thread overhead {slowdown:.2f}%).\n")
-
-else:
+        else:
             output_text.insert(tk.END, "\n⚖️ Both algorithms performed equally well.\n")
 
         output_text.config(state=tk.DISABLED)
@@ -108,12 +107,12 @@ else:
 def style_widget(widget, bg, fg, font=("Arial", 12), padx=6, pady=6):
     widget.config(bg=bg, fg=fg, font=font, padx=padx, pady=pady)
 
+
 # ------------------- TKINTER UI SETUP -------------------
 root = tk.Tk()
 root.title("Merge Sort vs Multithreaded Merge Sort")
 root.geometry("800x650")
 root.config(bg="#0b132b")
-
 
 # Header
 header = tk.Label(root, text="🔹 Merge Sort vs Multithreaded Merge Sort 🔹", 
@@ -150,3 +149,6 @@ output_text.config(state=tk.DISABLED)
 # Footer
 footer = tk.Label(root, text="Developed by Vedant Bhor 💻", bg="#0b132b", fg="#5bc0be", font=("Arial", 10, "italic"))
 footer.pack(pady=8)
+
+
+root.mainloop()
