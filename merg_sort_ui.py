@@ -146,3 +146,7 @@ tk.Label(output_frame, text="📊 Output & Results:", bg="#1c2541", fg="#fff", f
 output_text = scrolledtext.ScrolledText(output_frame, width=90, height=20, wrap=tk.WORD, font=("Consolas", 11), bg="#f0f0f0", fg="#000", bd=2)
 output_text.pack(padx=10, pady=10)
 output_text.config(state=tk.DISABLED)
+
+# Footer
+footer = tk.Label(root, text="Developed by Vedant Bhor 💻", bg="#0b132b", fg="#5bc0be", font=("Arial", 10, "italic"))
+footer.pack(pady=8)
