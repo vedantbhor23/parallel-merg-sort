@@ -79,3 +79,8 @@ def run_sort():
         threaded_merge_sort(arr2, 0, len(arr2) - 1)
         threaded_time = time.time() - start_time
 
+  # --- Display Results ---
+        output_text.config(state=tk.NORMAL)
+        output_text.delete(1.0, tk.END)
+        output_text.insert(tk.END, f"🌀 Sorted Array (Normal Merge Sort):\n{arr1}\n\n")
+        output_text.insert(tk.END, f"⚙️ Sorted Array (Multithreaded Merge Sort):\n{arr2}\n\n")
