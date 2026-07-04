@@ -66,3 +66,5 @@ def run_sort():
                 messagebox.showwarning("Input Warning", "Number of elements doesn't match input count.")
                 return
 
+        arr1 = arr.copy()
+        arr2 = arr.copy()
