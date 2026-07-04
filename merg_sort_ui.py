@@ -113,3 +113,9 @@ root = tk.Tk()
 root.title("Merge Sort vs Multithreaded Merge Sort")
 root.geometry("800x650")
 root.config(bg="#0b132b")
+
+
+# Header
+header = tk.Label(root, text="🔹 Merge Sort vs Multithreaded Merge Sort 🔹", 
+                  bg="#1c2541", fg="white", font=("Helvetica", 18, "bold"), pady=15)
+header.pack(fill="x")
