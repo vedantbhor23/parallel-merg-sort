@@ -52,3 +52,17 @@ def threaded_merge_sort(arr, left, right):
         right_thread.join()
         merge(arr, left, mid, right)
 
+# ------------------- MAIN FUNCTION (GUI HANDLER) -------------------
+def run_sort():
+    try:
+        n = int(entry_n.get())
+        user_input = entry_arr.get().strip()
+
+        if user_input.lower() == "r":
+            arr = [random.randint(0, 100000) for _ in range(n)]
+        else:
+            arr = list(map(int, user_input.split()))
+            if len(arr) != n:
+                messagebox.showwarning("Input Warning", "Number of elements doesn't match input count.")
+                return
+
