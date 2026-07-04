@@ -73,3 +73,9 @@ def run_sort():
         start_time = time.time()
         merge_sort(arr1, 0, len(arr1) - 1)
         normal_time = time.time() - start_time
+
+# --- Multithreaded Merge Sort ---
+        start_time = time.time()
+        threaded_merge_sort(arr2, 0, len(arr2) - 1)
+        threaded_time = time.time() - start_time
+
