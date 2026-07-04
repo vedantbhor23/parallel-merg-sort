@@ -119,3 +119,12 @@ root.config(bg="#0b132b")
 header = tk.Label(root, text="🔹 Merge Sort vs Multithreaded Merge Sort 🔹", 
                   bg="#1c2541", fg="white", font=("Helvetica", 18, "bold"), pady=15)
 header.pack(fill="x")
+
+# Input frame
+frame_input = tk.Frame(root, bg="#3a506b", bd=3, relief="ridge")
+frame_input.pack(pady=20, padx=20, fill="x")
+
+tk.Label(frame_input, text="Enter number of elements:", bg="#3a506b", fg="white", font=("Arial", 12, "bold")).grid(row=0, column=0, padx=10, pady=8, sticky="e")
+entry_n = tk.Entry(frame_input, width=10, font=("Arial", 12))
+entry_n.grid(row=0, column=1, padx=10, pady=8)
+
